@@ -49,7 +49,7 @@ function App() {
     // get latest message from allMessages
     const text = allMessages[allMessages.length -1];
 
-    const API_KEY = "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";
+    const API_KEY = "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";
     const API_URL ="https://api.openai.com/v1/chat/completions";
 
     // option api
