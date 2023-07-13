@@ -8,8 +8,7 @@ import {
   TypingIndicator
 } from "@chatscope/chat-ui-kit-react"
 import { useState } from "react"
-const API_KEY = "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";
-const API_URL ="https://api.openai.com/v1/chat/completions";
+
 
 function App() {
   // state messages
@@ -42,17 +41,16 @@ function App() {
     }, 600)
 
     // send message to chatGPT to get response
-    const generateResponse = async (allMessages) => {
-      const response = await sendChatToChatGPT(allMessages)
-      return response
-    }
-    generateResponse(allMessages)
+    sendChatToChatGPT(allMessages)
   }
 
   // function sendChatToChatGPT
-  const sendChatToChatGPT = (allMessages) => {
+  const sendChatToChatGPT = async (allMessages) => {
     // get latest message from allMessages
     const text = allMessages[allMessages.length -1];
+
+    const API_KEY = "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";
+    const API_URL ="https://api.openai.com/v1/chat/completions";
 
     // option api
     const options = {
@@ -73,7 +71,7 @@ function App() {
     }
 
     // fetching API
-    fetch(API_URL, options)
+   await fetch(API_URL, options)
     .then((result) => result.json())
     .then((data) => {
       console.log(data.choices[0].message.content)
