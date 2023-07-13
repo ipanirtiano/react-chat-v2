@@ -102,7 +102,7 @@ function App() {
 
   return (
     <>
-      <div className="w-full fixed top-0 bottom-[50px]">
+      <div className="w-full fixed top-0 bottom-0">
         <MainContainer>
           <ChatContainer>
             <MessageList typingIndicator={ typing ? <TypingIndicator content="ChatGPT is typing..." /> : null} style={{scrollBehavior: "smooth"}}>
